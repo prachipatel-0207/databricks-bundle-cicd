@@ -16,7 +16,8 @@ def main():
     spark.sql(f"USE CATALOG `{args.catalog}`")
     spark.sql(f"USE SCHEMA `{args.schema}`")
 
-    # Example: just find all taxis from a sample catalog
+    # CI/CD deployment test
+    print("🚀 Updated code deployed through GitHub Actions!")
     taxis.find_all_taxis().show(5)
 
 
