@@ -17,7 +17,7 @@ def main():
     spark.sql(f"USE SCHEMA `{args.schema}`")
 
     # CI/CD deployment test
-    print("🚀 Updated code deployed through GitHub Actions!")
+    print("🧪 Feature branch CI test!")
     taxis.find_all_taxis().show(5)
 
 
