@@ -29,7 +29,7 @@ jobs:
 
 
   # CD - Deploy the Bundle
-  deploy:
+    deploy:
     needs: validate
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
@@ -40,6 +40,9 @@ jobs:
 
       - name: Install Databricks CLI
         uses: databricks/setup-cli@main
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v6
 
       - name: Deploy Databricks Bundle
         run: databricks bundle deploy -t dev
